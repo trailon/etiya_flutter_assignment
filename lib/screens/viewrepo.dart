@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:etiya_flutter_assignment/bloc/view_repobloc/view_repo_bloc.dart';
 import 'package:etiya_flutter_assignment/widgets/ViewScreenWidgets/viewScreenLoadedState.dart';
 import 'package:flutter/material.dart';
@@ -41,9 +42,9 @@ class _ViewRepoBodyState extends State<ViewRepoBody> {
           } else if (state is ViewRepoLoaded) {
             return ViewRepoLoadedState(userRepo: state.repo);
           } else if (state is ViewRepoError) {
-            return const Center(child: CircularProgressIndicator());
+            return AutoSizeText(state.message!);
           } else {
-            return Text("No data");
+            return const Text("No data fetched");
           }
         },
       )),

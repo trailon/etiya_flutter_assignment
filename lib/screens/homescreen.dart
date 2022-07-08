@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:etiya_flutter_assignment/bloc/homescreenbloc/listing_bloc.dart';
 import 'package:etiya_flutter_assignment/widgets/HomeScreenWidgets/homeScreenInitialState.dart';
 import 'package:etiya_flutter_assignment/widgets/HomeScreenWidgets/homeScreenLoadedState.dart';
@@ -61,9 +62,9 @@ class HomeScreenBody extends StatelessWidget {
                   return HomeScreenLoadedState(
                       searchRepositoriesModel: state.listedRepos);
                 } else if (state is ListingBlocError) {
-                  return Expanded(child: ListView());
+                  return AutoSizeText(state.message!);
                 } else {
-                  return Expanded(child: ListView());
+                  return const AutoSizeText("An Error Occured");
                 }
               },
             )

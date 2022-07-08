@@ -19,11 +19,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       builder: EasyLoading.init(),
+      theme: ThemeData(fontFamily: 'Regular'),
       routerDelegate: _appRouter.delegate(
-              initialDeepLink: '/home',
-              navigatorObservers: () => [AutoRouterObserver()]),
-          routeInformationProvider: _appRouter.routeInfoProvider(),
-          routeInformationParser: _appRouter.defaultRouteParser(),
+          initialDeepLink: '/home',
+          navigatorObservers: () => [AutoRouterObserver()]),
+      routeInformationProvider: _appRouter.routeInfoProvider(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
     );
   }
 }
